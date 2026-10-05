@@ -1,7 +1,7 @@
 extends Node2D
 
 var target_color = "red"
-var target_score = 20
+var target_score = 10
 var score = 0
 var time_left = 30
 var game_active = true
@@ -11,7 +11,7 @@ var game_active = true
 @onready var target_label: Label = $UI/TargetLabel
 @onready var spawn_timer: Timer = $BalloonSpawner/SpawnTimer
 @onready var game_timer: Timer = $GameTimer
-
+	
 func _ready():
 	target_label.text = "Pop " + target_color.to_upper() + " Balloons!"
 	update_ui()
