@@ -8,6 +8,7 @@ var is_in = false
 @onready var player: CharacterBody2D = $"../Player"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var map_taken: Label = $MapTaken
+@onready var panel: Panel = $"../Map/Panel"
 
 func _ready() -> void:
 	pass
@@ -32,6 +33,7 @@ func chest_interaction():
 		if is_in == true:
 			if is_opened == false:
 				sub_viewport_container.show()
+				panel.show()
 				animated_sprite_2d.play("opened")
 				map_taken.show_notification()
 				is_opened = true

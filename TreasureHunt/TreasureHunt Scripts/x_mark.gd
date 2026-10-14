@@ -14,7 +14,8 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	is_in = true
 	if is_opened == false:
-		label.show()
+		if player.is_having_shovel == true:
+			label.show()
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -31,4 +32,5 @@ func mark_interaction():
 					treasure_hole.show()
 					treasure_chest.show()
 					collision_shape_2d.set_deferred("disabled", false)
+					await get_tree().create_timer(0.1).timeout
 					is_opened = true
