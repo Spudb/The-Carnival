@@ -21,7 +21,7 @@ func _physics_process(delta):
 	camera_2d.position = global_position
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction:
 		velocity = direction * SPEED
 	else:
