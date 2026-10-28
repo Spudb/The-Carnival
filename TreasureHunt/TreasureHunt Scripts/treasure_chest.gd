@@ -4,6 +4,7 @@ var is_opened = false
 var is_in = false
 @onready var how_to_interact: Label = $Area2D/HowToInteract2
 @onready var x_mark: Area2D = $"../X mark"
+@onready var label_win: Label = $"../HUD/Label_win"
 
 func _physics_process(delta: float) -> void:
 	chest_interaction()
@@ -25,4 +26,6 @@ func chest_interaction():
 					is_opened = true
 
 func win():
-	pass
+	label_win.show()
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
