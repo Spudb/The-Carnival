@@ -36,13 +36,13 @@ func _physics_process(delta):
 	elif velocity.y < 0:
 		animated_sprite_2d.play("walk_up")
 	elif velocity == Vector2.ZERO:
-		if Input.is_action_just_released("ui_up"):
+		if Input.is_action_just_released("up"):
 			animated_sprite_2d.play("idle_up")
-		elif Input.is_action_just_released("ui_down"):
+		elif Input.is_action_just_released("down"):
 			animated_sprite_2d.play("idle_down")
-		elif Input.is_action_just_released("ui_left"):
+		elif Input.is_action_just_released("left"):
 			animated_sprite_2d.play("idle_left")
-		elif Input.is_action_just_released("ui_right"):
+		elif Input.is_action_just_released("right"):
 			animated_sprite_2d.play("idle_right")
 	
 	move_and_slide()
